@@ -27,7 +27,7 @@ class ClaverTapProvider {
             'timeout' => 2.0,
             'curl' => [
                 CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
+                CURLOPT_ENCODING => '', 
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 0,
                 CURLOPT_FOLLOWLOCATION => true,
