@@ -1,6 +1,6 @@
 <?php
 
-namespace Flits\ClavertapSdk;
+namespace Flits\Clavertap;
 
 use \Exception;
 

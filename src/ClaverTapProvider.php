@@ -1,14 +1,14 @@
 <?php
 
-namespace Flits\ClavertapSdk;
+namespace Flits\Clavertap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
-use Flits\ClavertapSdk\ClaverTapException;
+use Flits\Clavertap\ClaverTapException;
 
 class ClaverTapProvider {
-    public $BASE_URL = "https://in1.api.clevertap.com/1/upload";
+    public $BASE_URL = "https://in1.api.clevertap.com/1/";
     public $HEADERS;
     public $EXTRA_CONFIG;
     public $client;
@@ -45,7 +45,7 @@ class ClaverTapProvider {
 
     function POST($payload) {
         try {
-            $response = $this->client->request($this->METHOD, $this->BASE_URL, [
+            $response = $this->client->request($this->METHOD, $this->BASE_URL.''.$this->URL, [
                 'body' => $payload,
             ]);
         } catch (RequestException $ex) {
