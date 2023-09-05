@@ -9,13 +9,11 @@ use Flits\Clavertap\ClaverTapException;
 
 class ClaverTapProvider {
     public $BASE_URL = "https://in1.api.clevertap.com/";
-    public $APP_ID;
     public $HEADERS;
     public $EXTRA_CONFIG;
     public $client;
 
     function __construct($config) {
-        $this->APP_ID = $config['app_id'] ?? ''; // APP_ID from the moengage
         $this->HEADERS = $config['headers'] ?? []; // extra headers if you want to pass it in request
         $this->EXTRA_CONFIG = $config['EXTRA_CONFIG'] ?? []; // Extra Guzzle/client config for api call
         $this->setupBaseURL();
@@ -44,13 +42,8 @@ class ClaverTapProvider {
         $this->BASE_URL=$this->BASE_URL;
     }
 
-    function setupURL() {
-        $this->URL = str_replace('<APP_ID>', $this->APP_ID, $this->URL);
-    }
-
     function POST($payload) {
         try {
-            $this->setupURL();
             $response = $this->client->request($this->METHOD,  $this->URL, [
                 'body' => $payload,
             ]);
