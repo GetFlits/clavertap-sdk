@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7;
 use Flits\Clavertap\ClaverTapException;
 
 class ClaverTapProvider {
-    public $BASE_URL = "https://in1.api.clevertap.com/";
+    public $BASE_URL = "https://in1.api.clevertap.com/1/";
     public $HEADERS;
     public $EXTRA_CONFIG;
     public $client;
@@ -16,7 +16,6 @@ class ClaverTapProvider {
     function __construct($config) {
         $this->HEADERS = $config['headers'] ?? []; // extra headers if you want to pass it in request
         $this->EXTRA_CONFIG = $config['EXTRA_CONFIG'] ?? []; // Extra Guzzle/client config for api call
-        $this->setupBaseURL();
         $this->setupClient();
     }
 
@@ -36,10 +35,6 @@ class ClaverTapProvider {
         ];
         $config = array_merge($config, $this->EXTRA_CONFIG);
         $this->client = new Client($config);
-    }
-
-    function setupBaseURL() {
-        $this->BASE_URL=$this->BASE_URL;
     }
 
     function POST($payload) {
