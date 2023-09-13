@@ -1,6 +1,6 @@
 {
-  "name": "flits/clavertap-sdk",
-  "description": "An Clavertap-sdk for php project",
+  "name": "flits/clevertap-sdk",
+  "description": "An Clevertap-sdk for php project",
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Flits\\Clavertap\\": "src/"
+      "Flits\\Clevertap\\": "src/"
     }
   },
   "extra": {
