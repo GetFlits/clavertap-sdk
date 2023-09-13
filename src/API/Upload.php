@@ -1,9 +1,9 @@
 <?php
 
 namespace Flits\Clavertap\API;
-use Flits\Clavertap\ClaverTapProvider;
+use Flits\Clavertap\ClavertapProvider;
 
-class Upload extends ClaverTapProvider {
+class Upload extends ClavertapProvider {
 
     public $METHOD = "POST";
     public $URL = 'upload';
