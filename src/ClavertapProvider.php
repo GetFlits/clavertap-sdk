@@ -5,9 +5,9 @@ namespace Flits\Clavertap;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
-use Flits\Clavertap\ClaverTapException;
+use Flits\Clavertap\ClavertapException;
 
-class ClaverTapProvider {
+class ClavertapProvider {
     public $BASE_URL = "https://in1.api.clevertap.com/1/";
     public $HEADERS;
     public $EXTRA_CONFIG;
@@ -43,10 +43,10 @@ class ClaverTapProvider {
                 'body' => $payload,
             ]);
         } catch (RequestException $ex) {
-            throw new ClaverTapException($ex->getResponse()->getBody()->getContents(), $ex->getResponse()->getStatusCode());
+            throw new ClavertapException($ex->getResponse()->getBody()->getContents(), $ex->getResponse()->getStatusCode());
         }
         if ($response->getStatusCode() != 200) {
-            throw new ClaverTapException($response->getBody()->getContents(), $response->getStatusCode());
+            throw new ClavertapException($response->getBody()->getContents(), $response->getStatusCode());
         }
         return json_decode($response->getBody()->getContents());
     }

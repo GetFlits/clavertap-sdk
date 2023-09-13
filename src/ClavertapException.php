@@ -4,5 +4,5 @@ namespace Flits\Clavertap;
 
 use \Exception;
 
-class ClaverTapException extends Exception {
+class ClavertapException extends Exception {
 }
