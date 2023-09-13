@@ -1,13 +1,13 @@
 <?php
 
-namespace Flits\Clavertap;
+namespace Flits\Clevertap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
-use Flits\Clavertap\ClavertapException;
+use Flits\Clevertap\ClevertapException;
 
-class ClavertapProvider {
+class ClevertapProvider {
     public $BASE_URL = "https://in1.api.clevertap.com/1/";
     public $HEADERS;
     public $EXTRA_CONFIG;
@@ -43,10 +43,10 @@ class ClavertapProvider {
                 'body' => $payload,
             ]);
         } catch (RequestException $ex) {
-            throw new ClavertapException($ex->getResponse()->getBody()->getContents(), $ex->getResponse()->getStatusCode());
+            throw new ClevertapException($ex->getResponse()->getBody()->getContents(), $ex->getResponse()->getStatusCode());
         }
         if ($response->getStatusCode() != 200) {
-            throw new ClavertapException($response->getBody()->getContents(), $response->getStatusCode());
+            throw new ClevertapException($response->getBody()->getContents(), $response->getStatusCode());
         }
         return json_decode($response->getBody()->getContents());
     }
