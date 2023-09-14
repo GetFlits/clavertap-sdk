@@ -1,2 +1,2 @@
-# clavertap-sdk
-This repo gives wrapper for the clavertap APIs
+# clevertap-sdk
+This repo gives wrapper for the clevertap APIs
