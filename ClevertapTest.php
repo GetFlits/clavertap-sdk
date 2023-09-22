@@ -42,8 +42,8 @@ class ClevertapTest extends TestCase {
     public function getHeaders() {
         $config['headers'] = [
             "Content-Type" => "application/json",
-            "X-CleverTap-Account-Id" => "TEST-KK4-8KZ-566Z",
-            "X-CleverTap-Passcode" => "e4595a2f-f468-4ad8-99a2-9034fadad172"
+            "X-CleverTap-Account-Id" => "*********",
+            "X-CleverTap-Passcode" => "*********"
         ];
         return $config;
     }
